@@ -55,8 +55,8 @@ export function Pipeline() {
     }
     setColumns((prev) => ({
       ...prev,
-      [dragging.from]: prev[dragging.from].filter((d) => d.id !== dragging.deal.id),
-      [to]: [...prev[to], dragging.deal],
+      [dragging.from]: (prev[dragging.from] ?? []).filter((d) => d.id !== dragging.deal.id),
+      [to]: [...(prev[to] ?? []), dragging.deal],
     }));
     setDragging(null);
     setHover(null);
