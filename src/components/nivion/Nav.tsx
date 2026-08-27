@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 
@@ -81,13 +82,13 @@ export function Nav() {
               </li>
             ))}
             <li>
-              <a
-                href="#produto"
+              <Link
+                to="/app"
                 onClick={() => setOpen(false)}
                 className="mt-1 block rounded-xl bg-ink px-3 py-3 text-center text-sm font-semibold text-onnavy"
               >
-                Conhecer o CRM
-              </a>
+                Entrar no CRM
+              </Link>
             </li>
           </ul>
         </div>
