@@ -6,7 +6,6 @@ import {
   Handshake,
   KeyRound,
   LayoutDashboard,
-  PieChart,
   ToggleRight,
   UserCog,
   UserPlus,
@@ -24,7 +23,6 @@ const features = [
   { icon: KeyRound, title: "Controle de acessos", text: "Cada pessoa vê apenas o que precisa." },
   { icon: ToggleRight, title: "Módulos ativáveis", text: "Ligue recursos conforme a empresa cresce." },
   { icon: Bell, title: "Notificações inteligentes", text: "Avisos no momento em que fazem diferença." },
-  { icon: PieChart, title: "Saúde da carteira", text: "Concentração de receita e clientes em risco." },
 ];
 
 export function Features() {
