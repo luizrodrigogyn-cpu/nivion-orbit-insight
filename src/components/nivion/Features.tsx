@@ -53,7 +53,7 @@ export function Features() {
             </Reveal>
           ))}
           <li aria-hidden className="hidden bg-white/70 lg:block" />
-          <li aria-hidden className="hidden bg-white/70 sm:block" />
+          <li aria-hidden className="hidden bg-white/70 lg:block" />
         </ul>
       </div>
     </section>
