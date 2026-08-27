@@ -52,6 +52,8 @@ export function Features() {
               </article>
             </Reveal>
           ))}
+          <li aria-hidden className="hidden bg-white/70 lg:block" />
+          <li aria-hidden className="hidden bg-white/70 sm:block" />
         </ul>
       </div>
     </section>
