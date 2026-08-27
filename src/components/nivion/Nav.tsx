@@ -47,12 +47,13 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <a
-            href="#produto"
+          <Link
+            to="/app"
             className="hidden rounded-xl bg-ink px-4 py-2.5 text-[0.875rem] font-semibold text-onnavy shadow-[var(--shadow-soft)] transition-transform duration-300 hover:-translate-y-0.5 sm:inline-flex"
           >
-            Conhecer o CRM
-          </a>
+            Entrar no CRM
+          </Link>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
