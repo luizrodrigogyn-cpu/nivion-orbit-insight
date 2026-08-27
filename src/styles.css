@@ -4,14 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ==========================================================================
+   NivionTech Titanium Intelligence — Design System
+   Tokens: cor, tipografia, espaço, raio, sombra, borda, blur, movimento
+   ========================================================================== */
+
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 3px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-3xl: calc(var(--radius) + 14px);
+  --radius-4xl: calc(var(--radius) + 22px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -31,59 +37,111 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ink: var(--ink);
-  --color-navy: var(--navy);
-  --color-navy-deep: var(--navy-deep);
-  --color-titanium: var(--titanium);
-  --color-ice: var(--ice);
+
+  /* Paleta NivionTech */
+  --color-ink: var(--nivion-navy);
+  --color-navy: var(--nivion-navy);
+  --color-navy-soft: var(--nivion-navy-soft);
+  --color-navy-deep: var(--nivion-black);
+  --color-nblack: var(--nivion-black);
+  --color-titanium: var(--nivion-titanium);
+  --color-titanium-light: var(--nivion-titanium-light);
+  --color-line: var(--nivion-line);
+  --color-ice: var(--nivion-titanium-light);
+  --color-blue: var(--nivion-blue);
+  --color-green: var(--nivion-green);
+  --color-gold: var(--nivion-gold);
+  --color-danger: var(--nivion-danger);
   --color-onnavy: var(--onnavy);
   --color-onnavy-muted: var(--onnavy-muted);
+  --color-surface: var(--nivion-surface);
+
   --font-display: "Sora", "Segoe UI", sans-serif;
   --font-sans: "Manrope", "Segoe UI", sans-serif;
+
+  /* Escala tipográfica */
+  --text-display: 2.5rem;
+  --text-display--line-height: 1.05;
+  --text-page: 1.875rem;
+  --text-page--line-height: 1.15;
+  --text-section: 1.375rem;
+  --text-section--line-height: 1.25;
+  --text-cardtitle: 1.125rem;
+  --text-cardtitle--line-height: 1.35;
+  --text-metric: 1.75rem;
+  --text-metric--line-height: 1.1;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-support: 0.875rem;
+  --text-support--line-height: 1.5;
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.4;
+
+  /* Movimento */
+  --ease-nivion: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 :root {
   --radius: 0.875rem;
 
-  --background: oklch(0.978 0.004 250);
-  --foreground: oklch(0.19 0.035 252);
+  /* Cores base da marca */
+  --nivion-off-white: #f5f4f0;
+  --nivion-surface: #fbfcfd;
+  --nivion-navy: #08162e;
+  --nivion-navy-soft: #102441;
+  --nivion-black: #080a0d;
+  --nivion-titanium: #6f7884;
+  --nivion-titanium-light: #c6ccd3;
+  --nivion-line: #d9dee5;
+  --nivion-blue: #255fa8;
+  --nivion-green: #16835f;
+  --nivion-gold: #b98018;
+  --nivion-danger: #c94b54;
 
-  --ink: oklch(0.145 0.018 255);
-  --navy: oklch(0.27 0.055 252);
-  --navy-deep: oklch(0.185 0.04 253);
-  --titanium: oklch(0.66 0.012 255);
-  --ice: oklch(0.78 0.075 230);
-  --onnavy: oklch(0.97 0.005 250);
-  --onnavy-muted: oklch(0.8 0.015 250);
+  --onnavy: #f5f4f0;
+  --onnavy-muted: #c6ccd3;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.19 0.035 252);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.19 0.035 252);
-  --primary: oklch(0.27 0.055 252);
-  --primary-foreground: oklch(0.98 0.004 250);
-  --secondary: oklch(0.94 0.006 250);
-  --secondary-foreground: oklch(0.24 0.04 252);
-  --muted: oklch(0.945 0.006 250);
-  --muted-foreground: oklch(0.48 0.022 254);
-  --accent: oklch(0.92 0.02 240);
-  --accent-foreground: oklch(0.22 0.04 252);
-  --destructive: oklch(0.577 0.19 27);
-  --destructive-foreground: oklch(0.98 0.003 248);
-  --border: oklch(0.9 0.008 252);
-  --input: oklch(0.9 0.008 252);
-  --ring: oklch(0.6 0.05 245);
+  --background: var(--nivion-off-white);
+  --foreground: #182437;
 
-  --gradient-navy: linear-gradient(145deg, oklch(0.26 0.05 252) 0%, oklch(0.17 0.035 254) 55%, oklch(0.13 0.02 258) 100%);
+  --card: var(--nivion-surface);
+  --card-foreground: #182437;
+  --popover: var(--nivion-surface);
+  --popover-foreground: #182437;
+  --primary: var(--nivion-navy);
+  --primary-foreground: var(--nivion-off-white);
+  --secondary: #ececeb;
+  --secondary-foreground: var(--nivion-navy);
+  --muted: #ececea;
+  --muted-foreground: #5c6472;
+  --accent: #e6ebf1;
+  --accent-foreground: var(--nivion-navy);
+  --destructive: var(--nivion-danger);
+  --destructive-foreground: #fbfcfd;
+  --border: var(--nivion-line);
+  --input: var(--nivion-line);
+  --ring: var(--nivion-blue);
+
+  /* Superfícies e profundidade */
+  --gradient-navy: linear-gradient(150deg, #102441 0%, #08162e 55%, #080a0d 100%);
+  --gradient-cinematic: radial-gradient(120% 90% at 20% 0%, #16304f 0%, #08162e 45%, #080a0d 100%);
   --gradient-sheen: linear-gradient(
     115deg,
-    color-mix(in oklab, white 85%, transparent) 0%,
-    color-mix(in oklab, white 25%, transparent) 40%,
+    color-mix(in oklab, white 80%, transparent) 0%,
+    color-mix(in oklab, white 18%, transparent) 42%,
     transparent 70%
   );
-  --shadow-float: 0 40px 90px -40px color-mix(in oklab, var(--navy-deep) 45%, transparent),
-    0 8px 24px -12px color-mix(in oklab, var(--navy-deep) 25%, transparent);
-  --shadow-soft: 0 20px 50px -30px color-mix(in oklab, var(--navy-deep) 35%, transparent);
+  --shadow-flat: 0 1px 2px color-mix(in oklab, var(--nivion-navy) 8%, transparent);
+  --shadow-soft: 0 10px 26px -18px color-mix(in oklab, var(--nivion-navy) 45%, transparent);
+  --shadow-raised: 0 18px 36px -22px color-mix(in oklab, var(--nivion-navy) 50%, transparent);
+  --shadow-float: 0 40px 80px -40px color-mix(in oklab, var(--nivion-black) 55%, transparent),
+    0 8px 20px -12px color-mix(in oklab, var(--nivion-navy) 28%, transparent);
+  --shadow-drag: 0 28px 46px -20px color-mix(in oklab, var(--nivion-navy) 50%, transparent);
+
+  --blur-glass: 16px;
+  --dur-fast: 200ms;
+  --dur-panel: 280ms;
+  --dur-cine: 520ms;
 }
 
 @layer base {
@@ -99,6 +157,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 1rem;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -107,37 +166,52 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
+    color: var(--nivion-navy);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--nivion-blue);
+    outline-offset: 2px;
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--ice) 55%, transparent);
+    background: color-mix(in oklab, var(--nivion-blue) 22%, transparent);
   }
 }
 
-/* Fundo tecnológico quase imperceptível */
+/* Malha técnica quase imperceptível */
 @utility tech-grid {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--navy) 7%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--navy) 7%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in oklab, var(--nivion-navy) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--nivion-navy) 7%, transparent) 1px, transparent 1px);
   background-size: 68px 68px;
 }
 
+/* ---------- Nível 1: superfície sólida ---------- */
+@utility surface-1 {
+  background: var(--nivion-surface);
+  border: 1px solid var(--nivion-line);
+  box-shadow: var(--shadow-flat);
+}
+
+/* ---------- Nível 2: Titanium Glass ---------- */
 @utility glass {
-  background: color-mix(in oklab, white 62%, transparent);
-  backdrop-filter: blur(18px) saturate(150%);
-  border: 1px solid color-mix(in oklab, white 75%, transparent);
-  box-shadow: var(--shadow-soft);
+  background: color-mix(in oklab, var(--nivion-surface) 72%, transparent);
+  backdrop-filter: blur(var(--blur-glass)) saturate(140%);
+  border: 1px solid color-mix(in oklab, white 70%, transparent);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 color-mix(in oklab, white 65%, transparent);
 }
 
 @utility glass-dark {
-  background: color-mix(in oklab, var(--navy-deep) 55%, transparent);
-  backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid color-mix(in oklab, var(--ice) 22%, transparent);
+  background: color-mix(in oklab, var(--nivion-navy) 62%, transparent);
+  backdrop-filter: blur(var(--blur-glass)) saturate(135%);
+  border: 1px solid color-mix(in oklab, var(--nivion-titanium-light) 22%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--nivion-titanium-light) 18%, transparent);
 }
 
 @utility hairline {
-  border: 1px solid color-mix(in oklab, var(--navy) 12%, transparent);
+  border: 1px solid var(--nivion-line);
 }
 
 @utility metal-edge {
@@ -150,7 +224,7 @@
     padding: 1px;
     background: linear-gradient(
       140deg,
-      color-mix(in oklab, var(--ice) 70%, transparent),
+      color-mix(in oklab, var(--nivion-titanium-light) 85%, transparent),
       transparent 45%,
       color-mix(in oklab, white 70%, transparent)
     );
@@ -162,17 +236,32 @@
   }
 }
 
+/* ---------- Nível 3: Cinematic Surface ---------- */
+@utility cinematic {
+  background: var(--gradient-cinematic);
+  color: var(--onnavy);
+  box-shadow: var(--shadow-float);
+  border: 1px solid color-mix(in oklab, var(--nivion-titanium-light) 16%, transparent);
+}
+
 @utility text-gradient-navy {
-  background: linear-gradient(120deg, oklch(0.22 0.045 252), oklch(0.42 0.06 245) 70%, oklch(0.55 0.08 235));
+  background: linear-gradient(120deg, #08162e 0%, #1c3a63 62%, #255fa8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+@utility focus-nivion {
+  &:focus-visible {
+    outline: 2px solid var(--nivion-blue);
+    outline-offset: 2px;
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -186,7 +275,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
   }
 }
 
@@ -202,7 +291,7 @@
 @keyframes pulse-ring {
   0% {
     transform: scale(0.85);
-    opacity: 0.55;
+    opacity: 0.5;
   }
   70% {
     transform: scale(1.35);
@@ -213,8 +302,19 @@
   }
 }
 
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @utility animate-rise {
-  animation: rise 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: rise 0.6s var(--ease-nivion) both;
 }
 
 @utility animate-float-slow {
@@ -227,6 +327,10 @@
 
 @utility animate-pulse-ring {
   animation: pulse-ring 2.6s ease-out infinite;
+}
+
+@utility animate-panel-in {
+  animation: panel-in var(--dur-panel) var(--ease-nivion) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
